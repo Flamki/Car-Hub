@@ -1,0 +1,159 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f8f9fa; /* Light gray background color */
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .section {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .left-data {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff; /* White background */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+      }
+
+      h3 {
+        text-align: center;
+        color: #007bff; /* Bootstrap primary color */
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      form input,
+      form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ced4da; /* Bootstrap form border color */
+        border-radius: 4px;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 4px;
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      .login {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .login a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .success-message {
+        color: #28a745; /* Bootstrap success color */
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="section">
+        <div class="left-data">
+          <h3>Sign Up</h3>
+          <form id="signup-form">
+            <input type="text" name="name" placeholder="User name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <button class="btn-primary" type="submit">Submit</button>
+          </form>
+          <p class="login">
+            Already Have an Account
+            <span>
+              <a href="SignInPage.html">Log In</a>
+            </span>
+          </p>
+          <p class="success-message" id="success-message"></p>
+        </div>
+      </section>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const signupForm = document.getElementById("signup-form");
+        const successMessage = document.getElementById("success-message");
+
+        signupForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(signupForm);
+          const userData = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            password: formData.get("password"),
+          };
+
+          if (!userData.name || !userData.email || !userData.password) {
+            alert("All fields are required");
+            return;
+          }
+
+          if (!userData.email.includes("@")) {
+            alert("Invalid E-mail");
+            return;
+          }
+
+          if (userData.password.length < 8) {
+            alert("Enter password length at least 8");
+            return;
+          }
+
+          // Save data to localStorage or send it to the server
+          const storedData = JSON.parse(localStorage.getItem("userData")) || [];
+          storedData.push(userData);
+          localStorage.setItem("userData", JSON.stringify(storedData));
+
+          // Display success message
+          successMessage.textContent = "Data added successfully!";
+          signupForm.reset();
+        });
+      });
+    </script>
+  </body>
+</html>

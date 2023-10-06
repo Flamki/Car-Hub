@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hub</title>
+    <link rel="stylesheet" href="./finalstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo" >
+            <img src="./Assets/mainlogo.jpg" alt="Company Logo">
+            <h1></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">Ride</a></li>
+                <li><a href="#section3">Service</a></li>
+                <li><a href="#section4">About</a></li>
+                <li><a href="#section5">Review</a></li>
+                <li><a href="SignInPage.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+
+    <section id="section1" class="hero">
+        <div class="hero-content">
+            <h1>Explore the World with Our Premium Cars</h1>
+            <p>Experience the thrill of driving in luxury and comfort.</p>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter Location">
+                </div>
+                <div class="input-item">
+                    <label for="pickup-date">Pickup Date</label>
+                    <input type="date" id="pickup-date">
+                </div>
+                <div class="input-item">
+                    <label for="return-date">Return Date</label>
+                    <input type="date" id="return-date">
+                </div>
+            </div>
+            <button class="btn">Book Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="./Assets/about.png" alt="Car Image">
+            
+    </section>
+
+    <section id="section2" class="steptobook">
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Rent with Three Easy Step</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="feature col">
+                <div class="locationicon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg>
+                </div>
+                <h3 class="text1">Choose A Location</h3>
+                <p>Discover a world of possibilities with our carefully curated rental car locations. From vibrant city centers to tranquil getaways, choose the backdrop for your next memorable journey.</p>
+               </div>
+              <div class="feature col">
+                <div class="pickupdateicon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                      </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Pick A Date</h3>
+                <p>Select the dates that suit your itinerary best. Our flexible calendar ensures you find the perfect timeframe for your travel plans. Get ready to hit the road on your terms.</p>
+
+              </div>
+              <div class="feature col">
+                <div class="bookicon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4z"/>
+                      </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Book A Car</h3>
+                <p>Reserve your preferred vehicle hassle-free. Our intuitive booking system ensures a seamless experience. Lock in your choice and get set for an unforgettable travel adventure.</p>
+              </div>
+            </div>
+          </div>
+
+    </section>
+    <section id="section3" class="car-deals">
+        <h2>Explore out Top Deal's</h2>
+   
+    <div class="car-list">
+        <div class="car">
+            <img src="./Assets/wagonrwagonrrightfrontthreequarter.jpg" alt="Car 1">
+            <h2>wagonr</h2>
+            <p>Description of Car Model 1.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/citycityrightfrontthreequarter.jpg" alt="Car 2">
+            <h2>Car honda city</h2>
+            <p>Description of Car Model 2.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/ertigaertigarightfrontthreequarter.jpg" alt="Car 3">
+            <h2>ertiga</h2>
+            <p>Description of Car Model 3.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/nexonnexonrightfrontthreequarter.jpg" alt="Car 4">
+            <h2>tata nexon</h2>
+            <p>Description of Car Model 4.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/endeavourendeavourrightfrontthreequarter.jpg" alt="Car 5">
+            <h2>endeavour</h2>
+            <p>Description of Car Model 5.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/fortunerfortunerrightfrontthreequarter.jpg" alt="Car 6">
+            <h2>fortuner</h2>
+            <p>Description of Car Model 6.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/thartharrightfrontthreequarter.jpg" alt="Car 7">
+            <h2>mahindra thar</h2>
+            <p>Description of Car Model 7.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="car">
+            <img src="./Assets/rapidrapidrightfrontthreequarter.jpg" alt="Car 8">
+            <h2>skoda rapid</h2>
+            <p>Description of Car Model 8.</p>
+            <button>Book Now</button>
+        </div>
+        
+    </div>
+</section>
+<section id="section4">
+    <div class="about-us-section" id="section4">
+        <div class="content">
+            <div class="text">
+                <h2>About Us</h2>
+                <p>Car Hub is more than just a rental service; we're your travel partner. With a diverse fleet and a commitment to exceptional service, we ensure your journey is memorable for all the right reasons. Our transparent pricing and easy booking process guarantee a hassle-free experience. Founded with a vision to revolutionize car rentals, Car Hub is your trusted name in transportation. Let's embark on your next adventure together.
+
+                </p>
+            </div>
+            <div class="image">
+                <img src="./Assets/pexels-photo-1213294.webp" alt="About Us Image">
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="section5" class="customer-reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+        <div class="reviewer-info">
+            <img src="./Assets/testimonial-1.jpg" alt="User 1">
+            <p>John Doe</p>
+        </div>
+        <div class="review-content">
+            <p>Impressed with the seamless booking process and top-notch customer service. Will definitely rent from Car Hub again!.</p>
+        </div>
+    </div>
+    <div class="review">
+        <div class="reviewer-info">
+            <img src="./Assets/testimonial-2.jpg" alt="User 2">
+            <p>Jane Smith</p>
+        </div>
+        <div class="review-content">
+            <p>Car Hub made our road trip unforgettable. The car was clean and well-maintained, and the staff was incredibly helpful.</p>
+        </div>
+    </div>
+  </section>
+<footer class="site-footer">
+  <div class="footer-container">
+      <div class="feature">
+          <h3>Features</h3>
+          <ul>
+              <li>24/7 Customer Support</li>
+              <li>Easy Booking Process</li>
+              <li>Wide Range of Cars</li>
+          </ul>
+      </div>
+     
+      <div class="quick-links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="#section1">Home</a></li>
+              <li><a href="#section2">Ride Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+          </ul>
+      </div>
+      <div class="trademarks">
+          <h5>&#153 2023 Car Hub</h5>
+          <img src="./Assets/mainlogo.jpg" alt="Trademark Logo 1">
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

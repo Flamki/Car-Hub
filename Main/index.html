@@ -45,7 +45,7 @@
                     <input type="date" id="return-date">
                 </div>
             </div>
-            <button class="btn" id="booknow">Book Now</button>
+            <button class="btn" id="booknow" style="background-color: lightcoral;">Book Now</button>
         </div>
         <div class="hero-image">
             <img src="./Assets/about.png" alt="Car Image">
@@ -99,49 +99,49 @@
             <img src="./Assets/wagonrwagonrrightfrontthreequarter.jpg" alt="Car 1">
             <h2>wagonr</h2>
             <p>Description of Car Model 1.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/citycityrightfrontthreequarter.jpg" alt="Car 2">
             <h2>Car honda city</h2>
             <p>Description of Car Model 2.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/ertigaertigarightfrontthreequarter.jpg" alt="Car 3">
             <h2>ertiga</h2>
             <p>Description of Car Model 3.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/nexonnexonrightfrontthreequarter.jpg" alt="Car 4">
             <h2>tata nexon</h2>
             <p>Description of Car Model 4.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/endeavourendeavourrightfrontthreequarter.jpg" alt="Car 5">
             <h2>endeavour</h2>
             <p>Description of Car Model 5.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/fortunerfortunerrightfrontthreequarter.jpg" alt="Car 6">
             <h2>fortuner</h2>
             <p>Description of Car Model 6.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/thartharrightfrontthreequarter.jpg" alt="Car 7">
             <h2>mahindra thar</h2>
             <p>Description of Car Model 7.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         <div class="car">
             <img src="./Assets/rapidrapidrightfrontthreequarter.jpg" alt="Car 8">
             <h2>skoda rapid</h2>
             <p>Description of Car Model 8.</p>
-            <button>Book Now</button>
+             <button class="buy-button" onclick="redirectToCollection()">Book Now</button>
         </div>
         
     </div>
@@ -199,7 +199,7 @@
           <ul>
               <li><a href="#section1">Home</a></li>
               <li><a href="#section2">Ride Service</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="contactUs.html">Contact Us</a></li>
           </ul>
       </div>
       <div class="trademarks">
@@ -229,7 +229,13 @@
         }
 
         // Add an event listener to the "Book Now" button
-        document.getElementById('booknow').addEventListener('click', redirectToCollectionPage);</script>
+        document.getElementById('booknow').addEventListener('click', redirectToCollectionPage);
+
+         function redirectToCollection() {
+    // Redirect to the collection page (collection.html)
+    window.location.href = 'collection.html';
+  }
+        </script>
         
 
 </body>

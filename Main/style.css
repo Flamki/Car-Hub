@@ -150,16 +150,17 @@ body {
 }
 
 .btn {
-  background-color: #333;
-  color: #333;
+  background-color: #007bff;
+  color: #fff;
   font-size: 18px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .btn:hover {
-  background-color: #555;
+  background-color: #0056b3;
 }
 
 .hero-image {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Car</title>
+  </head>
+  <body>
+    <h1>Add Car</h1>
+
+    <form id="addCarForm">
+      <label for="carImage">Car Image URL:</label>
+      <input type="text" id="carImage" required />
+
+      <label for="carName">Car Name:</label>
+      <input type="text" id="carName" required />
+
+      <label for="carPrice">Car Price:</label>
+      <input type="number" id="carPrice" required />
+
+      <label for="carDescription">Car Description:</label>
+      <textarea id="carDescription" rows="4" required></textarea>
+
+      <button type="button" onclick="addCar()">Add Car</button>
+    </form>
+
+    <script>
+      function addCar() {
+        var carImage = document.getElementById("carImage").value;
+        var carName = document.getElementById("carName").value;
+        var carPrice = document.getElementById("carPrice").value;
+        var carDescription = document.getElementById("carDescription").value;
+
+        var carData = {
+          image: carImage,
+          name: carName,
+          price: carPrice,
+          description: carDescription,
+        };
+
+        // Save the car data to local storage or send it to a server for storage
+        var existingCars = JSON.parse(localStorage.getItem("cars")) || [];
+        existingCars.push(carData);
+        localStorage.setItem("cars", JSON.stringify(existingCars));
+
+        alert("Car added successfully!");
+        clearForm();
+      }
+
+      function clearForm() {
+        document.getElementById("carImage").value = "";
+        document.getElementById("carName").value = "";
+        document.getElementById("carPrice").value = "";
+        document.getElementById("carDescription").value = "";
+      }
+    </script>
+  </body>
+</html>

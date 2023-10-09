@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Collection</title>
+  </head>
+  <body>
+    <h1>Car Collection</h1>
+
+    <label for="search">Search:</label>
+    <input type="text" id="search" oninput="searchCars()" />
+
+    <div id="cars"></div>
+
+    <script>
+      function displayCars(cars) {
+        var carsContainer = document.getElementById("cars");
+        carsContainer.innerHTML = "";
+
+        cars.forEach(function (car) {
+          var carElement = document.createElement("div");
+          carElement.innerHTML = `
+                    <div class="car">
+                        <img src="${car.image}" alt="${car.name}">
+                        <h2>${car.name}</h2>
+                        <p>Price: $${car.price}</p>
+                        <p>${car.description}</p>
+                    </div>
+                `;
+          carsContainer.appendChild(carElement);
+        });
+      }
+
+      function searchCars() {
+        var searchQuery = document.getElementById("search").value.toLowerCase();
+        var allCars = JSON.parse(localStorage.getItem("cars")) || [];
+        var filteredCars = allCars.filter(function (car) {
+          return (
+            car.name.toLowerCase().includes(searchQuery) ||
+            car.description.toLowerCase().includes(searchQuery) ||
+            car.price.toString().includes(searchQuery)
+          );
+        });
+
+        displayCars(filteredCars);
+      }
+
+      // Initial display of all cars
+      var allCars = JSON.parse(localStorage.getItem("cars")) || [];
+      displayCars(allCars);
+    </script>
+  </body>
+</html>

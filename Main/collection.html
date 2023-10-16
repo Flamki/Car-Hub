@@ -76,7 +76,7 @@
       }
 
       .car img {
-        width: 30px;
+        width: 300px;
         height: auto;
         border-radius: 4px;
         margin-bottom: 10px;
@@ -124,59 +124,78 @@
     </div>
 
     <script>
-      function initMap() {
-        // Your map initialization code here
-      }
+  function initMap() {
+    // Your map initialization code here
+  }
 
-      function displayCars(cars) {
-        var carsContainer = document.getElementById("cars");
-        carsContainer.innerHTML = "";
+  function displayCars(cars) {
+    var carsContainer = document.getElementById("cars");
+    carsContainer.innerHTML = "";
 
-        cars.forEach(function (car) {
-          var carElement = document.createElement("div");
-          carElement.className = "car";
-          carElement.innerHTML = `
-                    <img src="${car.image}" alt="${car.name}">
-                    <h2>${car.name}</h2>
-                    <p>${car.description}</p>
-                    <p>Price: $${car.price}</p>
-                    <button class="buy-button" onclick="buyCar('${car.name}', ${car.price})">Buy Now</button>
-                `;
-          carsContainer.appendChild(carElement);
-        });
-      }
+    cars.forEach(function (car) {
+      var carElement = document.createElement("div");
+      carElement.className = "car";
+      carElement.innerHTML = `
+            <img src="${car.image}" alt="${car.name}">
+            <h2>${car.name}</h2>
+            <p>${car.description}</p>
+            <p>Price: $${car.price}</p>
+            <button class="buy-button" onclick="buyCar('${car.name}', ${car.price})">Buy Now</button>
+        `;
+      carsContainer.appendChild(carElement);
+    });
+  }
 
-      function searchCars() {
-        var searchQuery = document.getElementById("search").value.toLowerCase();
-        var allCars = JSON.parse(localStorage.getItem("cars")) || [];
-        var filteredCars = allCars.filter(function (car) {
-          return (
-            car.name.toLowerCase().includes(searchQuery) ||
-            car.description.toLowerCase().includes(searchQuery) ||
-            car.price.toString().includes(searchQuery)
-          );
-        });
+  function searchCars() {
+    var searchQuery = document.getElementById("search").value.toLowerCase();
+    var allCars = JSON.parse(localStorage.getItem("cars")) || [];
+    var filteredCars = allCars.filter(function (car) {
+      return (
+        car.name.toLowerCase().includes(searchQuery) ||
+        car.description.toLowerCase().includes(searchQuery) ||
+        car.price.toString().includes(searchQuery)
+      );
+    });
 
-        displayCars(filteredCars);
-      }
+    displayCars(filteredCars);
+  }
 
-      function buyCar(carName, carPrice) {
-        // Redirect to the payment page (info.html)
-        window.location.href = `info.html?car=${encodeURIComponent(
-          carName
-        )}&price=${encodeURIComponent(carPrice)}`;
-      }
+  function buyCar(carName, carPrice) {
+    // Redirect to the payment page (payment.html)
+    window.location.href = "payment.html";
+  }
 
-      // Initial display of all cars
-      var allCars = JSON.parse(localStorage.getItem("cars")) || [];
-      displayCars(allCars);
-    </script>
+  // Initial display of all cars
+  var allCars = JSON.parse(localStorage.getItem("cars")) || [];
+  displayCars(allCars);
 
-    <!-- Google Maps API Script -->
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"
-    ></script>
+    function buyCar(carName, carPrice) {
+    // Store car details in localStorage for retrieval in payment.html
+    var carDetails = {
+      name: carName,
+      price: carPrice,
+      // Add more details as needed
+    };
+    localStorage.setItem('selectedCar', JSON.stringify(carDetails));
+
+    // Redirect to the payment page (payment.html)
+    window.location.href = 'payment.html';
+
+    function buyCar(carName, carPrice) {
+    // Store car details in localStorage for retrieval in payment.html
+    var carDetails = {
+        name: carName,
+        price: carPrice,
+        // Add more details as needed
+    };
+    localStorage.setItem('selectedCar', JSON.stringify(carDetails));
+
+    // Redirect to the payment page (payment.html)
+    window.location.href = 'payment.html';
+}
+
+  }
+</script>
+
   </body>
 </html>
